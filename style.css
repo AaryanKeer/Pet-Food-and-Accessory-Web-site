@@ -1,0 +1,248 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    color: white;
+    padding: 0px;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    align-items: center;
+}
+
+nav ul.navbar li {
+    display: flex;
+    align-items: center;
+    margin: 0 30px;
+    position: relative;
+    justify-content: center;
+}
+
+nav ul.navbar li.logo {
+    margin-right: auto;
+}
+
+nav ul.navbar li a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+nav ul.navbar li input[type="text"] {
+    padding: 5px;
+    margin: 10px 0;
+    border-color: rgb(0, 0, 0, 0.6);
+    border-radius: 3px;
+
+}
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.7); /* Faint black border */
+    border-radius: 4px;
+    outline: none;
+}
+
+.search-bar input[type="text"]:focus {
+    border: 1px solid rgba(0, 0, 0, 0.8); /* Slightly darker border on focus */
+}
+
+nav ul.navbar li img {
+    vertical-align: middle;
+}
+
+nav ul.navbar li .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+nav ul.navbar li .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+nav ul.navbar li .dropdown-content a:hover {
+    background-color: white;
+}
+
+nav ul.navbar li:hover .dropdown-content {
+    display: block;
+}
+
+nav ul.navbar li:hover a {
+    background-color: white;
+}
+
+.icon-item {
+    display: flex;
+    align-items: center;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+section.slider {
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+section.slider .slides {
+    display: flex;
+    transition: transform 1s ease;
+}
+
+section.slider .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+section.slider img {
+    width: 100%;
+    vertical-align: middle;
+    cursor: pointer;
+}
+/* Navigation buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 6px;
+    color: #24dde4;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Dots */
+.dots {
+    text-align: center;
+    padding: 0px;
+    background: white;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fade effect for slides */
+.fade {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul.navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul.navbar li {
+        width: 100%;
+        text-align: left;
+    }
+
+    nav ul.navbar li input[type="text"] {
+        width: 90%;
+    }
+
+    nav ul.navbar li .dropdown-content {
+        position: relative;
+        box-shadow: none;
+    }
+
+    nav ul.navbar li .dropdown-content a {
+        text-align: center;
+    }
+
+    .icon-item {
+        display: block;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .search-bar {
+        order: 1;
+    }
+
+    .icon-item:nth-of-type(1) {
+        order: 2;
+    }
+
+    .icon-item:nth-of-type(2) {
+        order: 3;
+    }
+
+    .icon-item:nth-of-type(3) {
+        order: 4;
+    }
+}
+@media (max-width: 480px) {
+    section.slider img {
+        width: 100%;
+        height: auto;
+    }
+}
